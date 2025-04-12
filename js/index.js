@@ -2,11 +2,18 @@
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.panel');
 
+// grab hamburger btn + mobile menu
+const btn = document.querySelector('#menu-btn');
+const menu = document.querySelector('#menu');
+const logo = document.querySelector('#logo');
+
 // tabs menu event listener
 tabs.forEach((tab) => tab.addEventListener('click', onTabClick));
 
-function onTabClick(e) {
+// hamburger btn listener
+btn.addEventListener('click', navToggle);
 
+function onTabClick(e) {
     // deactivate all tabs
     tabs.forEach((tab) => {
         tab.children[0].classList.remove(
@@ -15,7 +22,6 @@ function onTabClick(e) {
             'md:border-b-0'
         )
     })
-
     // hide all panels when tab clicked
     panels.forEach((panel) => panel.classList.add('hidden'));
 
@@ -30,4 +36,17 @@ function onTabClick(e) {
     document.getElementById('panels')
         .getElementsByClassName(classString)[0]
         .classList.remove('hidden');
+}
+
+function navToggle() {
+    btn.classList.toggle('open');
+    menu.classList.toggle('flex');
+    menu.classList.toggle('hidden');
+
+    // if mobile menu is open
+    if (menu.classList.contains('flex')) {
+        logo.setAttribute('src', './images/logo-bookmark-footer.svg')
+    } else {
+        logo.setAttribute('src', './images/logo-bookmark.svg')
+    }
 }

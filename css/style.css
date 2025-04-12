@@ -1094,6 +1094,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .open {
   transform: rotate(90deg);
   transform: translateY(0px);
+  position: fixed;
+  top: 50px;
+  right: 50px;
 }
 
 .open .hamburger-top {
