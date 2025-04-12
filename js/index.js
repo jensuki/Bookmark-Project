@@ -50,3 +50,13 @@ function navToggle() {
         logo.setAttribute('src', './images/logo-bookmark.svg')
     }
 }
+
+// close mobile menu when resizing browser md+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        btn.classList.remove('open');
+        logo.setAttribute('src', './images/logo-bookmark.svg');
+    }
+})
