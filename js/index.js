@@ -7,6 +7,9 @@ const btn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const logo = document.querySelector('#logo');
 
+// grab mobile menu links
+const navLinks = document.querySelectorAll('#menu a');
+
 // tabs menu event listener
 tabs.forEach((tab) => tab.addEventListener('click', onTabClick));
 
@@ -59,4 +62,15 @@ window.addEventListener('resize', () => {
         btn.classList.remove('open');
         logo.setAttribute('src', './images/logo-bookmark.svg');
     }
+})
+
+// close mobile menu when link is clicked
+navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        btn.classList.remove('flex');
+        btn.classList.remove('open');
+        logo.setAttribute('src', './images/logo-bookmark.svg');
+    })
 })
