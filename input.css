@@ -60,6 +60,7 @@
 
 .open .hamburger-top {
     transform: rotate(45deg) translateY(6px) translateX(6px);
+    background-color: #fff;
 }
 
 .open .hamburger-middle {
@@ -68,4 +69,5 @@
 
 .open .hamburger-bottom {
     transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    background-color: #fff;
 }
